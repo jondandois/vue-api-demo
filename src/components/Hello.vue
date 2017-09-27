@@ -1,6 +1,13 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <input type="text" v-model="input_val">
+    Input Value: <span v-text="input_val"></span>
+    <ul>
+      <li v-for="user in users">
+        {{user.firstname}}  {{user.lastname}}
+      </li>
+    </ul>
     <h2>Essential Links</h2>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
@@ -25,7 +32,13 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      input_val: '',
+      users: [
+        {firstname: 'Sebastian', lastname: 'Eschweiler'},
+        {firstname: 'Bill', lastname: 'Smith'},
+        {firstname: 'John', lastname: 'Porter'}
+      ]
     }
   }
 }
